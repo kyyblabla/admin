@@ -1,2 +1,2 @@
 # admin
-vue2+meterial
+vue2+vue-meterial
