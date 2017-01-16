@@ -2,10 +2,11 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
 import App from './App'
-var VueMaterial = require('vmd/vue-material')
+import store from './store'
+var VueMaterial = require('vue-material')
 Vue.use(VueMaterial)
-var store = require('./store')
 /* eslint-disable no-new */
+console.log(store.store)
 new Vue({
   store,
   el: '#app',
