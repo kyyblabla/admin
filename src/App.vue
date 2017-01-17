@@ -3,7 +3,7 @@
     <headers></headers>
     <div id="content">
       <md-layout md-gutter>
-        <md-layout md-column md-hide-small md-flex="20">
+        <md-layout id="m-left" md-column md-hide-small md-flex="20">
           <md-whiteframe md-elevation="2">
             <menus></menus>
           </md-whiteframe>
@@ -45,6 +45,7 @@
     mounted: function () {
       this.$nextTick(function () {
         window.addEventListener('resize', this.onResize)
+        window.addEventListener('load', this.onResize)
       })
     }
   }

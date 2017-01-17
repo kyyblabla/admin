@@ -1,10 +1,10 @@
 <template>
   <div>
     <md-toolbar>
-      <md-button v-show="windowSize=='small'" class="md-icon-button" @click="toggleLeftSidenav">
+      <md-button v-show="windowSizeDesc=='small'" class="md-icon-button" @click="toggleLeftSidenav">
         <md-icon>menu</md-icon>
       </md-button>
-      <h2 class="md-title" style="flex: 1">Admin管理</h2>
+      <h2 class="md-title" style="flex: 1">Admin</h2>
       <md-button class="md-icon-button">
         <md-icon>favorite</md-icon>
       </md-button>
@@ -21,7 +21,7 @@
 
   export default {
     computed: mapGetters([
-      'windowSize'
+      'windowSizeDesc'
     ]),
     methods: {
       toggleLeftSidenav() {

@@ -13,17 +13,19 @@ const state = {
 }
 
 const getters = {
-  windowSize: state => (state.windowSize.width && state.windowSize.width < 960) ? 'small' : 'large'
+  windowSizeDesc: state => (state.windowSize.width && state.windowSize.width < 960) ? 'small' : 'large'
 }
 
 const mutations = {
-  [WINDOW_RESIZE](state, {width, height}) {
-    state.windowSize = {width, height}
+  [WINDOW_RESIZE](state, size) {
+    state.windowSize = size
   }
 }
 
 const actions = {
-  resize: ({commit}, size) => commit(WINDOW_RESIZE, size)
+  resize: ({
+    commit
+  }, size) => commit(WINDOW_RESIZE, size)
 }
 
 export default new Vuex.Store({
