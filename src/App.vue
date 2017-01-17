@@ -1,40 +1,41 @@
 <template>
   <div id="app">
     <headers></headers>
-    <div id="content">
-      <md-layout md-gutter>
-        <md-layout id="m-left" md-column md-hide-small md-flex="20">
-          <md-whiteframe md-elevation="2">
-            <menus></menus>
-          </md-whiteframe>
-        </md-layout>
-        <md-layout md-column md-flex-small="100" md-flex="80">
-          <div>
-            <md-button @click="add">add</md-button>
-          </div>
-        </md-layout>
-      </md-layout>
-    </div>
+    <md-layout id="m-container">
+      <md-whiteframe md-elevation="2" id="menus" v-show="windowSizeDesc!='small'">
+        <menus></menus>
+      </md-whiteframe>
+      <div id="placeholder-box" v-show="windowSizeDesc!='small'">
+      </div>
+      <div id="contents">
+        <router-view class="view"></router-view>
+      </div>
+    </md-layout>
   </div>
 </template>
 
 <script>
+  import { mapGetters, mapActions } from 'vuex'
+  import router from './router'
   require('vue-material/dist/vue-material.css')
   var Menus = require('components/frame/Menus.vue')
   var Headers = require('components/frame/Headers.vue')
-  var mapActions = require('vuex').mapActions
   export default {
     name: 'app',
     data() {
       return {}
     },
+    computed: mapGetters([
+      'windowSizeDesc'
+    ]),
     components: {
       Headers,
       Menus
     },
     methods: {
       ...mapActions([
-        'resize'
+        'resize',
+        'toggleSideNav'
       ]),
       onResize(e) {
         this.resize({'width': window.innerWidth, 'height': window.innerHeight})
@@ -47,9 +48,31 @@
         window.addEventListener('resize', this.onResize)
         window.addEventListener('load', this.onResize)
       })
+      //
+      router.afterEach(route => {
+        this.toggleSideNav()
+      })
     }
   }
 </script>
 
 <style lang="less">
+  @header-height: 64px;
+  @menu-width: 250px;
+  #menus {
+    position: fixed;
+    top: @header-height;
+    left: 0;
+    bottom: 0;
+    width: @menu-width;
+  }
+
+  #placeholder-box {
+    width: @menu-width;
+  }
+
+  #contents {
+    padding-top: @header-height;
+    flex: 1;
+  }
 </style>

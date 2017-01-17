@@ -1,62 +1,28 @@
 <template>
   <md-list>
     <md-list-item>
-      <md-icon>move_to_inbox</md-icon>
-      <span>Inbox</span>
+      <router-link to="/">Home</router-link>
     </md-list-item>
 
     <md-list-item>
-      <md-icon>send</md-icon>
-      <span>Sent Mail</span>
+      <router-link to="/test">test</router-link>
     </md-list-item>
 
     <md-list-item>
-      <md-icon>delete</md-icon>
-      <span>Trash</span>
+      <router-link to="/xxx">404</router-link>
     </md-list-item>
 
     <md-list-item>
-      <md-icon>error</md-icon>
-      <span>Spam</span>
-
-      <md-divider class="md-inset"></md-divider>
+      <span>More</span>
+      <md-list-expand>
+        <md-list>
+          <md-list-item class="md-inset">World</md-list-item>
+          <md-list-item class="md-inset">Americas</md-list-item>
+          <md-list-item class="md-inset">Europe</md-list-item>
+        </md-list>
+      </md-list-expand>
     </md-list-item>
 
-    <md-list-item>
-      <md-avatar>
-        <img src="https://placeimg.com/40/40/people/5" alt="People">
-      </md-avatar>
-
-      <span>Abbey Christansen</span>
-
-      <md-button class="md-icon-button md-list-action">
-        <md-icon class="md-primary">chat_bubble</md-icon>
-      </md-button>
-    </md-list-item>
-
-    <md-list-item>
-      <md-avatar>
-        <img src="https://placeimg.com/40/40/people/1" alt="People">
-      </md-avatar>
-
-      <span>Alex Nelson</span>
-
-      <md-button class="md-icon-button md-list-action">
-        <md-icon class="md-primary">chat_bubble</md-icon>
-      </md-button>
-    </md-list-item>
-
-    <md-list-item>
-      <md-avatar>
-        <img src="https://placeimg.com/40/40/people/6" alt="People">
-      </md-avatar>
-
-      <span>Mary Johnson</span>
-
-      <md-button class="md-icon-button md-list-action">
-        <md-icon>chat_bubble</md-icon>
-      </md-button>
-    </md-list-item>
   </md-list>
 </template>
 
