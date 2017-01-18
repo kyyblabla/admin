@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <snackbar ref="snackbar"></snackbar>
     <headers></headers>
     <md-layout id="m-container">
       <md-whiteframe md-elevation="2" id="menus" v-show="windowSizeDesc!='small'">
@@ -8,6 +9,7 @@
       <div id="placeholder-box" v-show="windowSizeDesc!='small'">
       </div>
       <div id="contents">
+        <md-button class="md-primary md-raised">Debug</md-button>
         <router-view class="view"></router-view>
       </div>
     </md-layout>
@@ -16,41 +18,39 @@
 
 <script>
   import { mapGetters, mapActions } from 'vuex'
-  import router from './router'
-  require('vue-material/dist/vue-material.css')
-  var Menus = require('components/frame/Menus.vue')
-  var Headers = require('components/frame/Headers.vue')
+  import { router } from './router'
+  import 'vue-material/dist/vue-material.css'
+  import Menus from 'components/frame/Menus.vue'
+  import Headers from 'components/frame/Headers.vue'
+  import Snackbar from 'components/frame/Snackbar.vue'
+
   export default {
     name: 'app',
-    data() {
-      return {}
-    },
     computed: mapGetters([
       'windowSizeDesc'
     ]),
     components: {
       Headers,
-      Menus
+      Menus,
+      Snackbar
     },
     methods: {
       ...mapActions([
         'resize',
-        'toggleSideNav'
+        'toggleSideNav',
+        'ajaxing'
       ]),
       onResize(e) {
         this.resize({'width': window.innerWidth, 'height': window.innerHeight})
-      },
-      add() {
       }
     },
     mounted: function () {
       this.$nextTick(function () {
         window.addEventListener('resize', this.onResize)
         window.addEventListener('load', this.onResize)
-      })
-      //
-      router.afterEach(route => {
-        this.toggleSideNav()
+        router.afterEach(route => {
+          this.toggleSideNav()
+        })
       })
     }
   }

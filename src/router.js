@@ -6,10 +6,10 @@ import NotFound from './components/NotFound.vue'
 Vue.use(VueRouter)
 
 const routes = [
-  {path: '/home', component: Home},
-  {path: '/test', component: Test},
+  {path: '/home', name: '首页', component: Home, showMenu: true},
+  {path: '/test', name: '测试', component: Test, showMenu: true},
   {path: '/', redirect: '/home'},
-  {path: '*', component: NotFound}
+  {path: '*', name: '404', component: NotFound}
 ]
 
 var router = new VueRouter({
@@ -29,4 +29,8 @@ var router = new VueRouter({
     }
   }
 })
-module.exports = router
+
+module.exports = {
+  routes,
+  router
+}
