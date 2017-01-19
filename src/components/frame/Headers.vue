@@ -13,7 +13,8 @@
         <md-spinner v-show="ajaxing" md-indeterminate :md-size="20" class="md-accent"></md-spinner>
         <md-menu md-size="4">
           <md-avatar md-menu-trigger>
-            <img src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3515113604,2578688710&fm=116&gp=0.jpg" alt="Avatar" md-menu-trigger>
+            <img src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3515113604,2578688710&fm=116&gp=0.jpg"
+                 alt="Avatar" md-menu-trigger>
           </md-avatar>
           <md-menu-content>
             <md-menu-item>
@@ -36,10 +37,10 @@
 </template>
 
 <script>
+  import Menus from 'components/frame/Menus.vue'
   import {
     mapGetters
   } from 'vuex'
-  var Menus = require('components/frame/Menus.vue')
   export default {
     data() {
       return {}

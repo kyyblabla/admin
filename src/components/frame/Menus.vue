@@ -22,7 +22,6 @@
     mounted: function () {
       this.$nextTick(function () {
         this.routes = routes
-        console.log(routes)
       })
     }
   }

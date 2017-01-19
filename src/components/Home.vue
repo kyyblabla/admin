@@ -1,18 +1,19 @@
 <template>
   <div id="home">
-    <div>home</div>
+    <div>{{msg}}</div>
   </div>
 </template>
 <style>
-  #home{
+  #home {
     height: 1000px;
   }
 </style>
 <script>
+  import Mock from 'mockjs'
   export default{
     data() {
       return {
-        msg: 'hello vue'
+        msg: Mock.mock('@ctitle')
       }
     },
     components: {}

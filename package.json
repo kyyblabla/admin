@@ -13,6 +13,7 @@
     "lint": "eslint --ext .js,.vue src test/unit/specs test/e2e/specs"
   },
   "dependencies": {
+    "mockjs": "^1.0.1-beta3",
     "vue": "^2.1.0",
     "vue-material": "https://kyyblabla@github.com/kyyblabla/vue-material.git",
     "vue-router": "^2.1.1",
