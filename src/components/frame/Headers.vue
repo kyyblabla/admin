@@ -44,14 +44,14 @@ export default {
   }
 }
 </script>
-<style>
+<style lang="less">
 #toolbars {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  width: 100%;
-  z-index: 1;
-  overflow: visible;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 1;
+    overflow: visible;
 }
 </style>
