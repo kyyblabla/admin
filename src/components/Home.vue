@@ -1,21 +1,25 @@
 <template>
-  <div id="home">
-    <div>{{msg}}</div>
-  </div>
+<div id="home">
+  <p>{{msg}}</p>
+  <paper></paper>
+</div>
 </template>
 <style>
-  #home {
-    height: 1000px;
-  }
+#home {
+  height: 1000px;
+}
 </style>
 <script>
-  import Mock from 'mockjs'
-  export default{
-    data() {
-      return {
-        msg: Mock.mock('@ctitle')
-      }
-    },
-    components: {}
+import Paper from 'components/frame/Paper'
+import Mock from 'mockjs'
+export default {
+  data() {
+    return {
+      msg: Mock.mock('@ctitle')
+    }
+  },
+  components: {
+    Paper
   }
+}
 </script>

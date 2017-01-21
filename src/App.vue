@@ -9,7 +9,6 @@
       <div id="placeholder-box" v-show="windowSizeDesc!='small'">
       </div>
       <div id="contents">
-        <md-button class="md-primary md-raised">Debug</md-button>
         <router-view class="view"></router-view>
       </div>
     </md-layout>
