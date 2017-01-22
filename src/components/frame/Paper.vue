@@ -26,7 +26,9 @@ export default {
 
 <style lang="css">
 .m-paper{
-  width: 80%;
+  margin: 0 auto;
+  width: 60em;
+  height: 80em;
   padding: 10px;
 }
 </style>
