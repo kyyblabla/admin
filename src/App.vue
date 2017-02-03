@@ -16,8 +16,8 @@
 </template>
 
 <script>
-  import { mapGetters, mapActions } from 'vuex'
-  import { router } from './router'
+  import {mapGetters, mapActions} from 'vuex'
+  import {router} from './router'
   import 'vue-material/dist/vue-material.css'
   import Menus from 'components/frame/Menus.vue'
   import Headers from 'components/frame/Headers.vue'
@@ -55,7 +55,8 @@
   }
 </script>
 
-<style lang="less">
+<style rel="stylesheet/less" lang="less">
+  @import "assets/font.less";
   @header-height: 64px;
   @menu-width: 250px;
   #menus {
